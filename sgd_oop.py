@@ -48,7 +48,7 @@ class SGD:
         while epoch < num_epochs and avg_loss > loss_tolerance:
             running_loss = 0.0
             shuffled_x, shuffled_y = self.shuffle_data(X, y)
-            # if we take idx in X.shape it will work ??
+            # if we take idx in X.shape it will work ?? yess
             for idx in range(shuffled_x.shape[0]):
                 sample_x = shuffled_x[idx].reshape(-1, D)
                 sample_y = shuffled_y[idx].reshape(-1, 1)
