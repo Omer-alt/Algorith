@@ -75,12 +75,13 @@ ytrain = xtrain + np.random.normal(0, 0.1, (10,))
 xtrain = xtrain.reshape(-1, 1)
 ytrain = ytrain.reshape(-1, 1)
 plt.scatter(xtrain, ytrain, marker="+")
-
+plt.show()
 # Let's see the power of object oriented
 sgd = SGD()
 
 sgd_losses = sgd.train_with_sgd(xtrain, ytrain, 30, 0.1, 2)
 sgd.plot_loss(sgd_losses)
+plt.show()
             
             
             
