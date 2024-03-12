@@ -4,8 +4,10 @@ np.random.seed(10)
 
 class SGD:
     
-    def __init__(self) -> None:
-        pass
+    def __init__(self, lr, n_epochs) :
+        self.lr = lr
+        self.n_epochs = n_epochs
+        self.train_losses = []
     
     def initialize_theta(self, D):
         return np.zeros((D, 1))
@@ -37,15 +39,14 @@ class SGD:
         plt.ylabel("loss")
         plt.title("training curve")
         
-    def train_with_sgd(self, X, y, num_epochs, step_size, plot_every=1):
+    def train_with_sgd(self, X, y, plot_every=1):
         N, D = X.shape
         theta = self.initialize_theta(D)
-        losses = []
         epoch = 0
         loss_tolerance = 0.001
         avg_loss = float("inf")
         
-        while epoch < num_epochs and avg_loss > loss_tolerance:
+        while epoch < self.n_epochs and avg_loss > loss_tolerance:
             running_loss = 0.0
             shuffled_x, shuffled_y = self.shuffle_data(X, y)
             # if we take idx in X.shape it will work ?? yess
@@ -56,32 +57,19 @@ class SGD:
                 loss = self.mean_squered_error(sample_x, ypred)
                 running_loss += loss
                 grads = self.per_sample_gradient(sample_x, sample_y, theta)
-                theta = self.update_function(theta, grads, step_size)
+                theta = self.update_function(theta, grads, self.lr)
             
             # You can plot your data fitting here
             avg_loss = running_loss / X.shape[0]
-            losses.append(avg_loss)
-            print(f"Epoch {epoch}, loss {avg_loss}")
+            self.train_losses.append(avg_loss)
+            if epoch % 5 == 0:
+                print(f"Epoch {epoch}, loss {avg_loss}")
             
             epoch += 1
             
-        return losses
+        return self.train_losses
 
 
-# Prepared data for train model
-xtrain = np.linspace(0,1, 10)
-ytrain = xtrain + np.random.normal(0, 0.1, (10,))
-
-xtrain = xtrain.reshape(-1, 1)
-ytrain = ytrain.reshape(-1, 1)
-plt.scatter(xtrain, ytrain, marker="+")
-plt.show()
-# Let's see the power of object oriented
-sgd = SGD()
-
-sgd_losses = sgd.train_with_sgd(xtrain, ytrain, 30, 0.1, 2)
-sgd.plot_loss(sgd_losses)
-plt.show()
             
             
             

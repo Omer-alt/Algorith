@@ -66,7 +66,7 @@ class AdamGD:
     
         return theta, m, v
         
-    def adam_gradient_descent (self, X, y, num_epochs, plot_every=1):
+    def adam_gradient_descent (self, X, y, plot_every=1):
         """
             Trains model with adam  gradient descent
             Args:
@@ -78,21 +78,20 @@ class AdamGD:
         """
         N, D = X.shape
         theta = self.initialize_theta(D)
-        losses = []
         m = np.zeros(D)
         v = np.zeros(D)
 
-        for epoch in range (num_epochs):
+        for epoch in range (self.epoch):
             ypred = self.linear_function(X, theta)
             loss = self.mean_squared_error(y, ypred)
-            losses.append(loss)
+            self.train_losses.append(loss)
             grads = self.batch_gradient(X, y, theta)
             theta, m, v = self.update_parameters_with_adam(theta, grads, m, v, epoch, self.lr, beta1=0.9, beta2=0.999, epsilon=1e-8)
             
             if epoch % 5 == 0 :
                 print(f"\nEpoch {epoch}, loss {loss}")
 
-        return losses
+        return self.train_losses
     
     
 # Prepared data for train model
@@ -101,11 +100,11 @@ ytrain = xtrain + np.random.normal(0, 0.1, (10,))
 
 xtrain = xtrain.reshape(-1, 1)
 ytrain = ytrain.reshape(-1, 1)
-plt.subplot(2,1,2)
-plt.scatter(xtrain, ytrain, marker="+")
-plt.show()
+# plt.subplot(2,1,2)
+# plt.scatter(xtrain, ytrain, marker="+")
+# plt.show()
 # Let's see the power of object oriented
-adam_gd = AdamGD(0.1, 10)
+# adam_gd = AdamGD(0.1, 10)
 
-sgd_losses = adam_gd.adam_gradient_descent(xtrain, ytrain, 30, 2)
-adam_gd.plot_loss(sgd_losses)
+# sgd_losses = adam_gd.adam_gradient_descent(xtrain, ytrain, 30, 2)
+# adam_gd.plot_loss(sgd_losses)
