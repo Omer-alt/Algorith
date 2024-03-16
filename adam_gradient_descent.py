@@ -5,7 +5,7 @@ np.random.seed(10)
 class AdamGD:
     def __init__(self, lr, epoch) :
         self.lr = lr
-        self.epoch = epoch
+        self.n_epochs = epoch
         self.theta = None
         self.train_losses = []
         self.weight = []
@@ -35,7 +35,7 @@ class AdamGD:
     
     def plot_loss(self, losses):
         """
-            Plotting function for losses
+            Plotting function for losses, (Simple way to visualize it)
         """
         plt.subplot(2,1,1)
         plt.plot(losses)
@@ -81,7 +81,7 @@ class AdamGD:
         m = np.zeros(D)
         v = np.zeros(D)
 
-        for epoch in range (self.epoch):
+        for epoch in range (self.n_epochs):
             ypred = self.linear_function(X, theta)
             loss = self.mean_squared_error(y, ypred)
             self.train_losses.append(loss)

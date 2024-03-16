@@ -17,7 +17,7 @@ This repository presents the basics of machine learning, particularly regression
 
 **Language:** Python
 
-**Package:** Numpy, Sklearn, matplotlib, pandas
+**Package:** Numpy, Sklearn, matplotlib, pandas, ipywidgets
 
 ## Run Locally
 

@@ -36,7 +36,7 @@ class SgdMomentum:
         return np.sum(np.square(ytrue - ypred)) / ytrue.shape[0]
     
     def per_sample_gradient(self, xi, yi, theta):
-        return 2 * xi.T @ (self.linear_function(xi, theta) - yi)
+        return 2 * xi.T * (self.linear_function(xi, theta) - yi)
     
     def update_function(self, theta, momentum, step_size):
         return theta - momentum * step_size
