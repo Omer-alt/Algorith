@@ -21,6 +21,13 @@ the following graphs show the results of minimizing the error function following
 
 ![logistic_gradient_descent](/public/assets/logistic_gradient_descent.png)
 
+## Optimizations
+
+What about optimizations in this code ? You can notice the usage of
+-  OOP paradigm
+- The single responsibility principle
+E.g. refactors, performance improvements, accessibility
+
 ## Tech Stack
 
 **Language:** Python
