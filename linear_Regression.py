@@ -31,8 +31,8 @@ class Linear_regression:
     return self.w - self.lr * grad
 
   def train_gd(self, X, y):
+    
     N, D = X.shape
-    # lr = 0.1
     self.w = self.initilize_theta(D)
 
     for epoch in range (self.n_epochs):

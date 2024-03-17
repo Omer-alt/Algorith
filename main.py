@@ -5,6 +5,7 @@ from sklearn.datasets import make_classification
 from ipywidgets import interact, FloatSlider, IntSlider, fixed
 
 from linear_Regression import Linear_regression
+from minibatch_gradient_descent import MiniBatchGD
 from sgd_oop import SGD
 from logistic_regression import Logistic_Regression
 from sgd_with_momentum import SgdMomentum
@@ -98,11 +99,17 @@ class PlotHandler:
                     self.instances.append(instance)
                 
                 for instance in self.instances:    
-                    instance.adam_gradient_descent(self.xtrain, self.ytrain, 2) 
+                    instance.adam_gradient_descent(self.xtrain, self.ytrain) 
                     
             case 4:
                 print("4 - Mini batch Gradient descent : ")
-                pass
+                for (lr, epochs) in self.lrs_epochs:
+                    instance = MiniBatchGD(lr, epochs)
+                    self.instances.append(instance)
+                    
+                for instance in self.instances:    
+                    instance.train_minibatch_gd(self.xtrain, self.ytrain) 
+                    
             case 5:
                 print("5 - Logistic regression : ")
                 for (lr, epochs) in self.lrs_epochs:
@@ -155,17 +162,17 @@ def main():
     
     
     # Initialization of the class that manages my plots
-    
-    # For logistic regression
-    if choice == 5:
-        linear_model = PlotHandler(choice, [(0.1, 5), (0.1, 100), (0.1, 2000), (0.001, 5000), (0.01, 5000), (0.01, 10000)])
-        linear_model.plot_loss()
-        return 
+    match choice:
+        case 5:
+            # For logistic regression
+            linear_model = PlotHandler(choice, [(0.1, 5), (0.1, 100), (0.1, 2000), (0.001, 5000), (0.01, 5000), (0.01, 10000)])
+            linear_model.plot_loss()
+            return 
         
-    
-    # If we choose linear_regression
-    linear_model = PlotHandler(choice, [(0.1, 5), (0.1, 10), (0.1, 20), (0.2, 5), (0.05, 60), (0.1, 60)])
-    linear_model.plot_loss()
+        case _ :
+            # If we choose linear_regression
+            linear_model = PlotHandler(choice, [(0.1, 5), (0.1, 10), (0.1, 20), (0.2, 5), (0.05, 60), (0.1, 60)])
+            linear_model.plot_loss()
 
     
 if __name__ == "__main__":

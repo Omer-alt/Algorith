@@ -11,11 +11,14 @@ the following graphs show the results of minimizing the error function following
 ### 2. Stochiastic Gradient descent
 ![stochastic_gradient_descent](/public/assets/stochastic_gradient_descent.png)
 ### 3. Stochiastic Gradient descent with momentum
+Considering a fixed beta to calculate momentum  (equal to 0.99)
 ![gradient_descent_with_momentum](/public/assets/gradient_descent_with_momentum.png)
 
 ### 4. Minibatch Gradient descent 
-
-### 5. Adam Gradient descent 
+Considering a fixed batch (equal to 3)
+![minibatch_gradient_descent](/public/assets/minibatch_gradient_descent.png)
+### 5. Adam Gradient descent
+Considering fixed variables like (beta1=0.9, beta2=0.999, epsilon=1e-8) 
 ![adam_gradient_descent](/public/assets/adam_gradient_descent.png)
 ## II. Logistic regression
 
