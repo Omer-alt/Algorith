@@ -1,4 +1,4 @@
-# Implementation in python of Machine learning basic algorithm : Linear and logistic gradient descent, PCA, Neural network etc 😜
+# Implementation in python of Machine learning basic algorithm : Linear and logistic Regression, PCA, Neural network etc 😜
 
 This repository presents the basics of machine learning, particularly regression.
 
