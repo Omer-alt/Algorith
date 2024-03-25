@@ -161,8 +161,10 @@ if __name__ == "__main__":
     train_loss, test_loss, W1, W2, b1, b2 = nn.train(X_train, Y_train, X_test, Y_test)
     
     ## plot train et test losses
-    plt.plot(train_loss)
-    plt.plot(test_loss)
+    plt.plot(train_loss, label="L(Y,Y_train)")
+    plt.plot(test_loss, label="L(Y,Y_test)")
+    plt.legend(loc='upper right')
+    plt.title('lr = {} , n_epoch = {}'.format(0.0001, 10000 ), fontstyle='oblique')
     plt.show()
     
     y_pred = nn.predict(X_train, W1,W2, b1, b2 )

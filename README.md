@@ -1,4 +1,4 @@
-# Implementation in python of regression (Linear and logistic :😜)
+# Implementation in python of Machine learning basic algorithm : Linear and logistic gradient descent, PCA, Neural network etc 😜
 
 This repository presents the basics of machine learning, particularly regression.
 
@@ -30,7 +30,23 @@ What about optimizations in this code ? You can notice the usage of
 -  OOP paradigm
 - The single responsibility principle
 E.g. refactors, performance improvements, accessibility
+## III. Neural network for Classification
+## 1 - Problem to solve
+In this section it is a question of carrying out the classification of data which is presented as the Xor logic gate (see the data graph below).
 
+![xor_data_set](/public/assets/xor_data_set.png)
+
+## 2 - Resolution approach
+to solve this classification problem we propose to use a neural network with a single hidden layer as follows:
+
+![Neural_network](/public/assets/Neural1-Page-2.png)
+
+The activation function to use is the sigmoid function and to minimize our loss we use the gradient descent. Below are the results of our decision boundary and our loss (for training and testing sets)
+
+**Losses:** 
+![Train_test_loss](/public/assets/Losses.png)
+**Decision Boundary:** 
+![Train_test_loss](/public/assets/decision_boundary.png)
 ## Tech Stack
 
 **Language:** Python
