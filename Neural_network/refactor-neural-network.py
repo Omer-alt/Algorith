@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+np.random.seed(60)
 
 class Neuron:
     def __init__(self) -> None:
@@ -123,7 +124,7 @@ class NeuralNetWork:
             test_loss.append(self.loss(self.NL2.A, Y_test))
             
             ## plot boundary
-            if i % 50 == 0:
+            if i % 1000 == 0:
                 self.plot_decision_boundary()
                 
         return train_loss, test_loss
@@ -185,7 +186,7 @@ if __name__ == "__main__":
     plt.show()
     
     
-    nn = NeuralNetWork(0.1, 200)
+    nn = NeuralNetWork(0.01, 10000)
     train_loss, test_loss = nn.train(X_train, X_test, Y_train, Y_test)
     
     ## plot train et test losses
