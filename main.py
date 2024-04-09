@@ -133,7 +133,7 @@ class PlotHandler:
             axes[row, col].plot(instance.train_losses)
             axes[row, col].set_xlabel('Epoch')
             axes[row, col].set_ylabel('Loss')
-            axes[row, col].set_title('lr = {} , n_epoch = {}'.format(instance.lr, instance.n_epochs), fontstyle='oblique')
+            axes[row, col].set_title('fig_{} : lr = {} , n_epoch = {} '.format( i+1, instance.lr, instance.n_epochs), fontstyle='oblique')
             
         plt.tight_layout()
         plt.show()
