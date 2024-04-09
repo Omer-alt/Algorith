@@ -40,7 +40,7 @@ fig_6 we observe a rapid convergence then oscillation around the global minimum
 
 ## II. Logistic regression
 
-![logistic_gradient_descent](/public/assets/Logistique_regression.png)
+![logistic_gradient_descent](/public/assets/Logistique_regression1.png)
 From all its sets of plots we find it appropriate to choose the following hyperparameters:  $$lr = 0.05  \qquad n\_epochs = 5000$$
 
 ## Optimizations
