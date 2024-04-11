@@ -1,4 +1,4 @@
-# Implementation in python of Machine learning basic algorithm : Linear and logistic Regression, PCA, Neural network etc 😜
+# Implementation in python of Machine learning basic algorithm : Linear and logistic Regression, PCA, Neural network, Transformer etc 😜
 
 This repository presents the basics of machine learning, particularly regression.
 
@@ -66,9 +66,24 @@ The activation function to use is the sigmoid function and to minimize our loss 
 ![Train_test_loss](/public/assets/Losses.png)
 **Decision Boundary:** 
 ![Train_test_loss](/public/assets/decision_boundary.png)
+
+## IV. Transformer 
+![The transformer model architecture](https://i.stack.imgur.com/eAKQu.png)
+Transformer Main Paper: https://arxiv.org/abs/1706.03762
+
+In this section it is a question of implementing the essential concepts present in the transformer architecture model above.
+
+## 1 - Attention
+### -  Self-Attention
+### -  Cross-Attention
+### -  Layer-Normalisation
+### -  Position encoding
+
+
+
 ## Tech Stack
 
-**Language:** Python
+**Language:** Python, Pytorch
 
 **Package:** Numpy, Sklearn, matplotlib, pandas, ipywidgets
 
