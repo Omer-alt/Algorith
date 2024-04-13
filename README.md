@@ -31,7 +31,7 @@ Considering a fixed batch (equal to 3)
 
 change batch (equal to 1)
 ![minibatch_gradient_descent_with_1_as_batch](/public/assets/Minibach_1.png)
-- The minibatch with a batch of 1 is better than 3
+- The minibatch with a batch of 1 is better than 3 (Because data is simple. Try to test it with complicated one...)
 
 ### 5. Adam Gradient descent
 Considering fixed variables like (beta1=0.9, beta2=0.999, epsilon=1e-8) 

@@ -4,6 +4,7 @@ import sklearn
 from sklearn.datasets import make_classification
 from ipywidgets import interact, FloatSlider, IntSlider, fixed
 
+from Plot_handdling.plot_framework import PlotFrameWork
 from linear_Regression import Linear_regression
 from minibatch_gradient_descent import MiniBatchGD
 from sgd_oop import SGD
@@ -118,7 +119,7 @@ class PlotHandler:
                 
                 for instance in self.instances:    
                     instance.fit(self.X_train, self.y_train)
-                
+            
         number_plot = len(self.instances)
         # Assuming we have two lines
         num_cols = number_plot // 2 if number_plot % 2 == 0 else number_plot // 2 + 1
