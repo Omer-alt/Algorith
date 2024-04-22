@@ -74,10 +74,14 @@ Transformer Main Paper: https://arxiv.org/abs/1706.03762
 In this section it is a question of implementing the essential concepts present in the transformer architecture model above.
 
 ## 1 - Attention
-### -  Self-Attention
-### -  Cross-Attention
-### -  Layer-Normalisation
-### -  Position encoding
+#### -  Self-Attention
+#### -  Cross-Attention
+#### -  Layer-Normalisation
+#### -  Position encoding
+#### - MultiHead Attention
+```  Why MultiHead Attention ? ```
+It allows the model to jointly attend to information from different representation  subspaces at different position.
+
 
 
 
